@@ -1,5 +1,8 @@
 set -euo pipefail
 
+echo "==> bundler-audit"
+bundle exec bundler-audit check
+
 echo "==> RuboCop"
 bundle exec rubocop
 

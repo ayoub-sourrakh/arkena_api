@@ -47,3 +47,5 @@ gem "rspec-rails", "~> 8.0"
 gem "devise", "~> 4.9"
 
 gem "devise-jwt", "~> 0.12.1"
+
+gem "bundler-audit", "~> 0.9.2", groups: [ :development, :test ]
