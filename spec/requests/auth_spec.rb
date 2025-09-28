@@ -216,13 +216,9 @@ RSpec.describe "Auth", type: :request do
     end
 
     it "rejects logout with an invalid token" do
-      invalid_token = [
-        Base64.urlsafe_encode64({ alg: "HS256", typ: "JWT" }.to_json),
-        Base64.urlsafe_encode64({ sub: "fake" }.to_json),
-        "invalidsignature"
-      ].join(".")
+      invalid_token = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJlOTdkNWQ1NC03ZjM0LTQ2YmQtYWJlZi01YmY0NTYyOGE0NjUiLCJzdWIiOiI3Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNzU5MDE5MDUzLCJleHAiOjE3NTkwMjA4NTN9.SY4Hx-x2OUiyYy_5so5KxUomTyqanR928Q8ldM0U6ns"
 
-      delete "/auth/sign_out", headers: { "Authorization" => "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJlOTdkNWQ1NC03ZjM0LTQ2YmQtYWJlZi01YmY0NTYyOGE0NjUiLCJzdWIiOiI3Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNzU5MDE5MDUzLCJleHAiOjE3NTkwMjA4NTN9.SY4Hx-x2OUiyYy_5so5KxUomTyqanR928Q8ldM0U6ns" }
+      delete "/auth/sign_out", headers: { "Authorization" => invalid_token }
       expect(response).to have_http_status(:no_content)
     end
 
