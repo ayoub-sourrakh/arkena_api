@@ -40,5 +40,8 @@ module ArkenaApi
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    require 'rack/attack'
+    config.middleware.use Rack::Attack unless Rails.env.test?
   end
 end
