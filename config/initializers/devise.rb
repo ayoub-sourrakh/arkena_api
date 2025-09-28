@@ -14,7 +14,7 @@ Devise.setup do |config|
 
   # ==> JWT configuration
   config.jwt do |jwt|
-    jwt.secret = Rails.application.credentials[:devise_jwt_secret_key] || ENV["DEVISE_JWT_SECRET_KEY"]
+    jwt.secret = ENV["DEVISE_JWT_SECRET_KEY"]
 
     # Quand un token est généré (login)
     jwt.dispatch_requests = [

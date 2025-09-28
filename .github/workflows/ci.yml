@@ -25,7 +25,7 @@ jobs:
     env:
       RAILS_ENV: test
       DATABASE_URL: postgres://rails:password@localhost:5432/arkena_test
-      DEVISE_JWT_SECRET_KEY: super_test_secret_123
+      DEVISE_JWT_SECRET_KEY: e7df8f945dc66e1e508becf22a1b60114502710573f46570925ebb31ec32addfed4a9e915340f52107d2511230cd5e8b96bb1af887ce77e293b3367a5b9a5f57
 
     steps:
       - uses: actions/checkout@v5
