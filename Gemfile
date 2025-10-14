@@ -50,4 +50,4 @@ gem "devise-jwt", "~> 0.12.1"
 
 gem "bundler-audit", "~> 0.9.2", groups: [ :development, :test ]
 
-gem "rack-attack", "~> 6.7"
+gem "rack-attack", "~> 6.8"
